@@ -1,5 +1,3 @@
-# flutter_components
-
 # Flutter Components Library
 
 ![Flutter](https://img.shields.io/badge/Flutter-2.5-blue.svg)
