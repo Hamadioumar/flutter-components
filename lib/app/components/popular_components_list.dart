@@ -242,7 +242,7 @@ class CategoryView extends StatelessWidget {
 class Category {
   Category({
     this.title = '',
-    this.imagePath = '',
+    this.icon,
     this.lessonCount = 0,
     this.money = 0,
     this.rating = 0.0,
@@ -252,32 +252,32 @@ class Category {
   int lessonCount;
   int money;
   double rating;
-  String imagePath;
+  IconData? icon;
 
   static List<Category> categoryList = <Category>[
     Category(
-      imagePath: 'assets/design_course/interFace1.png',
+      icon: Icons.list,
       title: 'User interface Design',
       lessonCount: 24,
       money: 25,
       rating: 4.3,
     ),
     Category(
-      imagePath: 'assets/design_course/interFace2.png',
+      icon: Icons.smart_button,
       title: 'User interface Design',
       lessonCount: 22,
       money: 18,
       rating: 4.6,
     ),
     Category(
-      imagePath: 'assets/design_course/interFace1.png',
+      icon: Icons.input,
       title: 'User interface Design',
       lessonCount: 24,
       money: 25,
       rating: 4.3,
     ),
     Category(
-      imagePath: 'assets/design_course/interFace2.png',
+      icon: Icons.navigation,
       title: 'User interface Design',
       lessonCount: 22,
       money: 18,
@@ -287,28 +287,28 @@ class Category {
 
   static List<Category> popularCourseList = <Category>[
     Category(
-      imagePath: 'assets/design_course/interFace3.png',
+      icon: Icons.navigation,
       title: 'App Design Course',
       lessonCount: 12,
       money: 25,
       rating: 4.8,
     ),
     Category(
-      imagePath: 'assets/design_course/interFace4.png',
+      icon: Icons.input,
       title: 'Web Design Course',
       lessonCount: 28,
       money: 208,
       rating: 4.9,
     ),
     Category(
-      imagePath: 'assets/design_course/interFace3.png',
+      icon: Icons.dashboard_customize,
       title: 'App Design Course',
       lessonCount: 12,
       money: 25,
       rating: 4.8,
     ),
     Category(
-      imagePath: 'assets/design_course/interFace4.png',
+      icon: Icons.data_array,
       title: 'Web Design Course',
       lessonCount: 28,
       money: 208,
