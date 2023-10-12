@@ -5,18 +5,19 @@ import 'package:flutter_components/app/home/models/components_info.dart';
 import 'package:flutter_components/app/home/models/design_components.dart';
 import 'package:flutter_components/main.dart';
 
-class DesignCourseHomeScreen extends StatefulWidget {
+class DesignComponentHomeScreen extends StatefulWidget {
   @override
-  _DesignCourseHomeScreenState createState() => _DesignCourseHomeScreenState();
+  _DesignComponentHomeScreenState createState() =>
+      _DesignComponentHomeScreenState();
 }
 
-class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
+class _DesignComponentHomeScreenState extends State<DesignComponentHomeScreen> {
   CategoryType categoryType = CategoryType.ui;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: DesignCourseAppTheme.nearlyWhite,
+      color: DesignComponentAppTheme.nearlyWhite,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Column(
@@ -34,7 +35,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
                       getSearchBarUI(),
                       getCategoryUI(),
                       Flexible(
-                        child: getPopularCourseUI(),
+                        child: getPopularComponentUI(),
                       ),
                     ],
                   ),
@@ -61,7 +62,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
               fontWeight: FontWeight.w600,
               fontSize: 22,
               letterSpacing: 0.27,
-              color: DesignCourseAppTheme.darkerText,
+              color: DesignComponentAppTheme.darkerText,
             ),
           ),
         ),
@@ -98,7 +99,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
     );
   }
 
-  Widget getPopularCourseUI() {
+  Widget getPopularComponentUI() {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0, left: 18, right: 16),
       child: Column(
@@ -106,17 +107,17 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           const Text(
-            'Popular Course',
+            'Popular Component',
             textAlign: TextAlign.left,
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 22,
               letterSpacing: 0.27,
-              color: DesignCourseAppTheme.darkerText,
+              color: DesignComponentAppTheme.darkerText,
             ),
           ),
           Flexible(
-            child: PopularCourseListView(
+            child: PopularComponentListView(
               callBack: () {
                 moveTo();
               },
@@ -131,7 +132,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
     Navigator.push<dynamic>(
       context,
       MaterialPageRoute<dynamic>(
-        builder: (BuildContext context) => CourseInfoScreen(),
+        builder: (BuildContext context) => ComponentInfoScreen(),
       ),
     );
   }
@@ -149,10 +150,10 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
       child: Container(
         decoration: BoxDecoration(
             color: isSelected
-                ? DesignCourseAppTheme.nearlyBlue
-                : DesignCourseAppTheme.nearlyWhite,
+                ? DesignComponentAppTheme.nearlyBlue
+                : DesignComponentAppTheme.nearlyWhite,
             borderRadius: const BorderRadius.all(Radius.circular(24.0)),
-            border: Border.all(color: DesignCourseAppTheme.nearlyBlue)),
+            border: Border.all(color: DesignComponentAppTheme.nearlyBlue)),
         child: Material(
           color: Colors.transparent,
           child: InkWell(
@@ -175,8 +176,8 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
                     fontSize: 12,
                     letterSpacing: 0.27,
                     color: isSelected
-                        ? DesignCourseAppTheme.nearlyWhite
-                        : DesignCourseAppTheme.nearlyBlue,
+                        ? DesignComponentAppTheme.nearlyWhite
+                        : DesignComponentAppTheme.nearlyBlue,
                   ),
                 ),
               ),
@@ -219,11 +220,11 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
                             fontFamily: 'WorkSans',
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
-                            color: DesignCourseAppTheme.nearlyBlue,
+                            color: DesignComponentAppTheme.nearlyBlue,
                           ),
                           keyboardType: TextInputType.text,
                           decoration: InputDecoration(
-                            labelText: 'Search for course',
+                            labelText: 'Search for Component',
                             border: InputBorder.none,
                             helperStyle: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -276,17 +277,17 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
                     fontWeight: FontWeight.w400,
                     fontSize: 14,
                     letterSpacing: 0.2,
-                    color: DesignCourseAppTheme.grey,
+                    color: DesignComponentAppTheme.grey,
                   ),
                 ),
                 Text(
-                  'Design Course',
+                  'Design Component',
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 22,
                     letterSpacing: 0.27,
-                    color: DesignCourseAppTheme.darkerText,
+                    color: DesignComponentAppTheme.darkerText,
                   ),
                 ),
               ],
@@ -295,7 +296,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
           Container(
             width: 60,
             height: 60,
-            child: Image.asset('assets/design_course/userImage.png'),
+            child: Image.asset('assets/design_Component/userImage.png'),
           )
         ],
       ),

@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_components/app/home/models/design_components.dart';
 import 'package:flutter_components/main.dart';
 
-class PopularCourseListView extends StatefulWidget {
-  const PopularCourseListView({Key? key, this.callBack}) : super(key: key);
+class PopularComponentListView extends StatefulWidget {
+  const PopularComponentListView({Key? key, this.callBack}) : super(key: key);
 
   final Function()? callBack;
   @override
-  _PopularCourseListViewState createState() => _PopularCourseListViewState();
+  _PopularComponentListViewState createState() =>
+      _PopularComponentListViewState();
 }
 
-class _PopularCourseListViewState extends State<PopularCourseListView>
+class _PopularComponentListViewState extends State<PopularComponentListView>
     with TickerProviderStateMixin {
   AnimationController? animationController;
   @override
@@ -41,9 +42,9 @@ class _PopularCourseListViewState extends State<PopularCourseListView>
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
               children: List<Widget>.generate(
-                Category.popularCourseList.length,
+                Category.popularComponentList.length,
                 (int index) {
-                  final int count = Category.popularCourseList.length;
+                  final int count = Category.popularComponentList.length;
                   final Animation<double> animation =
                       Tween<double>(begin: 0.0, end: 1.0).animate(
                     CurvedAnimation(
@@ -55,7 +56,7 @@ class _PopularCourseListViewState extends State<PopularCourseListView>
                   animationController?.forward();
                   return CategoryView(
                     callback: widget.callBack,
-                    category: Category.popularCourseList[index],
+                    category: Category.popularComponentList[index],
                     animation: animation,
                     animationController: animationController,
                   );
@@ -117,7 +118,7 @@ class CategoryView extends StatelessWidget {
                                 borderRadius: const BorderRadius.all(
                                     Radius.circular(16.0)),
                                 // border: new Border.all(
-                                //     color: DesignCourseAppTheme.notWhite),
+                                //     color: DesignComponentAppTheme.notWhite),
                               ),
                               child: Column(
                                 children: <Widget>[
@@ -135,7 +136,7 @@ class CategoryView extends StatelessWidget {
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 16,
                                                 letterSpacing: 0.27,
-                                                color: DesignCourseAppTheme
+                                                color: DesignComponentAppTheme
                                                     .darkerText,
                                               ),
                                             ),
@@ -160,8 +161,9 @@ class CategoryView extends StatelessWidget {
                                                     fontWeight: FontWeight.w200,
                                                     fontSize: 12,
                                                     letterSpacing: 0.27,
-                                                    color: DesignCourseAppTheme
-                                                        .grey,
+                                                    color:
+                                                        DesignComponentAppTheme
+                                                            .grey,
                                                   ),
                                                 ),
                                                 Container(
@@ -170,7 +172,7 @@ class CategoryView extends StatelessWidget {
                                                       Icon(
                                                         Icons.star,
                                                         color:
-                                                            DesignCourseAppTheme
+                                                            DesignComponentAppTheme
                                                                 .nearlyBlue,
                                                         size: 20,
                                                       ),
@@ -207,7 +209,7 @@ class CategoryView extends StatelessWidget {
                                 const BorderRadius.all(Radius.circular(16.0)),
                             boxShadow: <BoxShadow>[
                               BoxShadow(
-                                  color: DesignCourseAppTheme.grey
+                                  color: DesignComponentAppTheme.grey
                                       .withOpacity(0.2),
                                   offset: const Offset(0.0, 0.0),
                                   blurRadius: 6.0),
@@ -220,7 +222,7 @@ class CategoryView extends StatelessWidget {
                               aspectRatio: 1.28,
                               child: Icon(
                                 Icons.play_circle_outline,
-                                color: DesignCourseAppTheme.nearlyBlue,
+                                color: DesignComponentAppTheme.nearlyBlue,
                                 size: 50,
                               ),
                             ),
@@ -285,31 +287,31 @@ class Category {
     ),
   ];
 
-  static List<Category> popularCourseList = <Category>[
+  static List<Category> popularComponentList = <Category>[
     Category(
       icon: Icons.navigation,
-      title: 'App Design Course',
+      title: 'App Design Component',
       lessonCount: 12,
       money: 25,
       rating: 4.8,
     ),
     Category(
       icon: Icons.input,
-      title: 'Web Design Course',
+      title: 'Web Design Component',
       lessonCount: 28,
       money: 208,
       rating: 4.9,
     ),
     Category(
       icon: Icons.dashboard_customize,
-      title: 'App Design Course',
+      title: 'App Design Component',
       lessonCount: 12,
       money: 25,
       rating: 4.8,
     ),
     Category(
       icon: Icons.data_array,
-      title: 'Web Design Course',
+      title: 'Web Design Component',
       lessonCount: 28,
       money: 208,
       rating: 4.9,

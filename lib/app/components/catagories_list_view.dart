@@ -142,7 +142,7 @@ class CategoryView extends StatelessWidget {
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 16,
                                                 letterSpacing: 0.27,
-                                                color: DesignCourseAppTheme
+                                                color: DesignComponentAppTheme
                                                     .darkerText,
                                               ),
                                             ),
@@ -167,8 +167,9 @@ class CategoryView extends StatelessWidget {
                                                     fontWeight: FontWeight.w200,
                                                     fontSize: 12,
                                                     letterSpacing: 0.27,
-                                                    color: DesignCourseAppTheme
-                                                        .grey,
+                                                    color:
+                                                        DesignComponentAppTheme
+                                                            .grey,
                                                   ),
                                                 ),
                                                 Container(
@@ -184,14 +185,14 @@ class CategoryView extends StatelessWidget {
                                                           fontSize: 18,
                                                           letterSpacing: 0.27,
                                                           color:
-                                                              DesignCourseAppTheme
+                                                              DesignComponentAppTheme
                                                                   .grey,
                                                         ),
                                                       ),
                                                       const Icon(
                                                         Icons.star,
                                                         color:
-                                                            DesignCourseAppTheme
+                                                            DesignComponentAppTheme
                                                                 .nearlyBlue,
                                                         size: 20,
                                                       ),
@@ -218,15 +219,17 @@ class CategoryView extends StatelessWidget {
                                                     fontWeight: FontWeight.w600,
                                                     fontSize: 18,
                                                     letterSpacing: 0.27,
-                                                    color: DesignCourseAppTheme
-                                                        .nearlyBlue,
+                                                    color:
+                                                        DesignComponentAppTheme
+                                                            .nearlyBlue,
                                                   ),
                                                 ),
                                                 Container(
                                                   decoration:
                                                       const BoxDecoration(
-                                                    color: DesignCourseAppTheme
-                                                        .nearlyBlue,
+                                                    color:
+                                                        DesignComponentAppTheme
+                                                            .nearlyBlue,
                                                     borderRadius:
                                                         BorderRadius.all(
                                                             Radius.circular(
@@ -238,7 +241,7 @@ class CategoryView extends StatelessWidget {
                                                     child: Icon(
                                                       Icons.add,
                                                       color:
-                                                          DesignCourseAppTheme
+                                                          DesignComponentAppTheme
                                                               .nearlyWhite,
                                                     ),
                                                   ),
