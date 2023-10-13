@@ -33,7 +33,7 @@ class _DesignComponentHomeScreenState extends State<DesignComponentHomeScreen> {
                   child: Column(
                     children: <Widget>[
                       getSearchBarUI(),
-                      getCategoryUI(),
+                      // getCategoryUI(),
                       Flexible(
                         child: getPopularComponentUI(),
                       ),
@@ -296,7 +296,7 @@ class _DesignComponentHomeScreenState extends State<DesignComponentHomeScreen> {
           Container(
             width: 60,
             height: 60,
-            child: Image.asset('assets/design_Component/userImage.png'),
+            child: const Icon(Icons.logo_dev),
           )
         ],
       ),

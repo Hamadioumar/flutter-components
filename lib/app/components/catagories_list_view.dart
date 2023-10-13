@@ -212,18 +212,6 @@ class CategoryView extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: <Widget>[
-                                                Text(
-                                                  '\$${category!.money}',
-                                                  textAlign: TextAlign.left,
-                                                  style: const TextStyle(
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 18,
-                                                    letterSpacing: 0.27,
-                                                    color:
-                                                        DesignComponentAppTheme
-                                                            .nearlyBlue,
-                                                  ),
-                                                ),
                                                 Container(
                                                   decoration:
                                                       const BoxDecoration(
@@ -267,14 +255,17 @@ class CategoryView extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             ClipRRect(
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(16.0)),
-                                child: AspectRatio(
-                                  aspectRatio: 1.0,
-                                  child: Icon(category!.icon,
-                                      size: 50,
-                                      color: Colors.green.withOpacity(0.5)),
-                                ))
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(16.0)),
+                              child: AspectRatio(
+                                aspectRatio: 1.0,
+                                child: Icon(
+                                  category!.icon,
+                                  size: 50,
+                                  color: Colors.green.withOpacity(0.5),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),

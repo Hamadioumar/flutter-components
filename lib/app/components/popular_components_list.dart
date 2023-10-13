@@ -246,13 +246,12 @@ class Category {
     this.title = '',
     this.icon,
     this.lessonCount = 0,
-    this.money = 0,
     this.rating = 0.0,
   });
 
   String title;
   int lessonCount;
-  int money;
+
   double rating;
   IconData? icon;
 
@@ -261,28 +260,24 @@ class Category {
       icon: Icons.list,
       title: 'User interface Design',
       lessonCount: 24,
-      money: 25,
       rating: 4.3,
     ),
     Category(
       icon: Icons.smart_button,
       title: 'User interface Design',
       lessonCount: 22,
-      money: 18,
       rating: 4.6,
     ),
     Category(
       icon: Icons.input,
       title: 'User interface Design',
       lessonCount: 24,
-      money: 25,
       rating: 4.3,
     ),
     Category(
       icon: Icons.navigation,
       title: 'User interface Design',
       lessonCount: 22,
-      money: 18,
       rating: 4.6,
     ),
   ];
@@ -292,28 +287,24 @@ class Category {
       icon: Icons.navigation,
       title: 'App Design Component',
       lessonCount: 12,
-      money: 25,
       rating: 4.8,
     ),
     Category(
       icon: Icons.input,
       title: 'Web Design Component',
       lessonCount: 28,
-      money: 208,
       rating: 4.9,
     ),
     Category(
       icon: Icons.dashboard_customize,
       title: 'App Design Component',
       lessonCount: 12,
-      money: 25,
       rating: 4.8,
     ),
     Category(
       icon: Icons.data_array,
       title: 'Web Design Component',
       lessonCount: 28,
-      money: 208,
       rating: 4.9,
     ),
   ];

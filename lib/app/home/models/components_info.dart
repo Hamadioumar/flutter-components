@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/app/home/models/design_components.dart';
+import 'package:flutter_components/app/home/home_view.dart';
 
 class ComponentInfoScreen extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
         duration: const Duration(milliseconds: 1000), vsync: this);
     animation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
         parent: animationController!,
-        curve: Interval(0, 1.0, curve: Curves.fastOutSlowIn)));
+        curve: const Interval(0, 1.0, curve: Curves.fastOutSlowIn)));
     setData();
     super.initState();
   }
@@ -56,8 +57,11 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
               children: <Widget>[
                 AspectRatio(
                   aspectRatio: 1.2,
-                  child:
-                      Image.asset('assets/design_Component/webInterFace.png'),
+                  child: Icon(
+                    Icons.newspaper,
+                    size: 50,
+                    color: Colors.green.withOpacity(0.5),
+                  ),
                 ),
               ],
             ),
@@ -92,9 +96,9 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                top: 32.0, left: 18, right: 16),
+                          const Padding(
+                            padding:
+                                EdgeInsets.only(top: 32.0, left: 18, right: 16),
                             child: Text(
                               'Web Design\nComponent',
                               textAlign: TextAlign.left,
@@ -113,18 +117,8 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Text(
-                                  '\$28.99',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 22,
-                                    letterSpacing: 0.27,
-                                    color: DesignComponentAppTheme.nearlyBlue,
-                                  ),
-                                ),
                                 Container(
-                                  child: Row(
+                                  child: const Row(
                                     children: <Widget>[
                                       Text(
                                         '4.3',
@@ -162,28 +156,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                               ),
                             ),
                           ),
-                          Expanded(
-                            child: AnimatedOpacity(
-                              duration: const Duration(milliseconds: 500),
-                              opacity: opacity2,
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 16, right: 16, top: 8, bottom: 8),
-                                child: Text(
-                                  'Lorem ipsum is simply dummy text of printing & typesetting industry, Lorem ipsum is simply dummy text of printing & typesetting industry.',
-                                  textAlign: TextAlign.justify,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 14,
-                                    letterSpacing: 0.27,
-                                    color: DesignComponentAppTheme.grey,
-                                  ),
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                            ),
-                          ),
+                          getCategoryUI(),
                           AnimatedOpacity(
                             duration: const Duration(milliseconds: 500),
                             opacity: opacity3,
@@ -208,7 +181,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                                             color: DesignComponentAppTheme.grey
                                                 .withOpacity(0.2)),
                                       ),
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.add,
                                         color:
                                             DesignComponentAppTheme.nearlyBlue,
@@ -237,7 +210,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                                               blurRadius: 10.0),
                                         ],
                                       ),
-                                      child: Center(
+                                      child: const Center(
                                         child: Text(
                                           'Join Component',
                                           textAlign: TextAlign.left,
@@ -281,7 +254,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                   child: Container(
                     width: 60,
                     height: 60,
-                    child: Center(
+                    child: const Center(
                       child: Icon(
                         Icons.favorite,
                         color: DesignComponentAppTheme.nearlyWhite,
@@ -302,7 +275,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                   child: InkWell(
                     borderRadius:
                         BorderRadius.circular(AppBar().preferredSize.height),
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back_ios,
                       color: DesignComponentAppTheme.nearlyBlack,
                     ),
@@ -343,7 +316,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
               Text(
                 text1,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 14,
                   letterSpacing: 0.27,
@@ -353,7 +326,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
               Text(
                 txt2,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.w200,
                   fontSize: 14,
                   letterSpacing: 0.27,
