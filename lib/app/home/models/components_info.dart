@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_components/app/components/catagories_list_view.dart';
 import 'package:flutter_components/app/home/models/design_components.dart';
 import 'package:flutter_components/app/home/home_view.dart';
 
@@ -149,7 +150,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                               padding: const EdgeInsets.all(8),
                               child: Row(
                                 children: <Widget>[
-                                  getTimeBoxUI('24', 'Classe'),
+                                  getTimeBoxUI('24', 'Components'),
                                   getTimeBoxUI('2hours', 'Time'),
                                   getTimeBoxUI('24', 'Seat'),
                                 ],
@@ -157,78 +158,6 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                             ),
                           ),
                           getCategoryUI(),
-                          AnimatedOpacity(
-                            duration: const Duration(milliseconds: 500),
-                            opacity: opacity3,
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 16, bottom: 16, right: 16),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Container(
-                                    width: 48,
-                                    height: 48,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color:
-                                            DesignComponentAppTheme.nearlyWhite,
-                                        borderRadius: const BorderRadius.all(
-                                          Radius.circular(16.0),
-                                        ),
-                                        border: Border.all(
-                                            color: DesignComponentAppTheme.grey
-                                                .withOpacity(0.2)),
-                                      ),
-                                      child: const Icon(
-                                        Icons.add,
-                                        color:
-                                            DesignComponentAppTheme.nearlyBlue,
-                                        size: 28,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 16,
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                      height: 48,
-                                      decoration: BoxDecoration(
-                                        color:
-                                            DesignComponentAppTheme.nearlyBlue,
-                                        borderRadius: const BorderRadius.all(
-                                          Radius.circular(16.0),
-                                        ),
-                                        boxShadow: <BoxShadow>[
-                                          BoxShadow(
-                                              color: DesignComponentAppTheme
-                                                  .nearlyBlue
-                                                  .withOpacity(0.5),
-                                              offset: const Offset(1.1, 1.1),
-                                              blurRadius: 10.0),
-                                        ],
-                                      ),
-                                      child: const Center(
-                                        child: Text(
-                                          'Join Component',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 18,
-                                            letterSpacing: 0.0,
-                                            color: DesignComponentAppTheme
-                                                .nearlyWhite,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
                           SizedBox(
                             height: MediaQuery.of(context).padding.bottom,
                           )
@@ -291,6 +220,50 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
       ),
     );
   }
+
+
+  Widget getCategoryUI() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Padding(
+          padding: EdgeInsets.only(top: 8.0, left: 18, right: 16),
+          child: Text(
+            'Category',
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 22,
+              letterSpacing: 0.27,
+              color: DesignComponentAppTheme.darkerText,
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        
+        const SizedBox(
+          height: 16,
+        ),
+        CategoryListView(
+          callBack: () {
+            moveTo();
+          },
+        ),
+      ],
+    );
+  }
+   void moveTo() {
+    Navigator.push<dynamic>(
+      context,
+      MaterialPageRoute<dynamic>(
+        builder: (BuildContext context) => ComponentInfoScreen(),
+      ),
+    );
+  }
+
 
   Widget getTimeBoxUI(String text1, String txt2) {
     return Padding(

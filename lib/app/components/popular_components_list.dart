@@ -30,7 +30,7 @@ class _PopularComponentListViewState extends State<PopularComponentListView>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.only(top: 15),
       child: FutureBuilder<bool>(
         future: getData(),
         builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
@@ -41,6 +41,12 @@ class _PopularComponentListViewState extends State<PopularComponentListView>
               padding: const EdgeInsets.all(8),
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 20.0,
+                crossAxisSpacing: 20.0,
+                childAspectRatio: 0.8,
+              ),
               children: List<Widget>.generate(
                 Category.popularComponentList.length,
                 (int index) {
@@ -61,12 +67,6 @@ class _PopularComponentListViewState extends State<PopularComponentListView>
                     animationController: animationController,
                   );
                 },
-              ),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 32.0,
-                crossAxisSpacing: 32.0,
-                childAspectRatio: 0.8,
               ),
             );
           }
