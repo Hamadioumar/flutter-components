@@ -42,7 +42,7 @@ class _PopularComponentListViewState extends State<PopularComponentListView>
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
+                crossAxisCount: 2,
                 mainAxisSpacing: 20.0,
                 crossAxisSpacing: 20.0,
                 childAspectRatio: 0.8,
@@ -104,7 +104,7 @@ class CategoryView extends StatelessWidget {
               splashColor: Colors.transparent,
               onTap: callback,
               child: SizedBox(
-                height: 280,
+                height: 380,
                 child: Stack(
                   alignment: AlignmentDirectional.bottomCenter,
                   children: <Widget>[
@@ -124,9 +124,9 @@ class CategoryView extends StatelessWidget {
                                 children: <Widget>[
                                   Expanded(
                                     child: Container(
-                                      child: Column(
+                                      child: const Column(
                                         children: <Widget>[
-                                          const Padding(
+                                          Padding(
                                             padding: EdgeInsets.only(
                                                 top: 16, left: 16, right: 16),
                                             child: Text(
@@ -134,7 +134,7 @@ class CategoryView extends StatelessWidget {
                                               textAlign: TextAlign.left,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w600,
-                                                fontSize: 16,
+                                                fontSize: 20,
                                                 letterSpacing: 0.27,
                                                 color: DesignComponentAppTheme
                                                     .darkerText,
@@ -142,7 +142,7 @@ class CategoryView extends StatelessWidget {
                                             ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsets.only(
+                                            padding: EdgeInsets.only(
                                                 top: 8,
                                                 left: 16,
                                                 right: 16,
@@ -154,31 +154,31 @@ class CategoryView extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.center,
                                               children: <Widget>[
-                                                const Text(
-                                                  ' lesson',
+                                                Text(
+                                                  'Components 5',
                                                   textAlign: TextAlign.left,
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.w200,
-                                                    fontSize: 12,
+                                                    fontSize: 18,
                                                     letterSpacing: 0.27,
                                                     color:
                                                         DesignComponentAppTheme
                                                             .grey,
                                                   ),
                                                 ),
-                                                Container(
-                                                  child: const Row(
-                                                    children: <Widget>[
-                                                      Icon(
-                                                        Icons.star,
-                                                        color:
-                                                            DesignComponentAppTheme
-                                                                .nearlyBlue,
-                                                        size: 20,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                )
+                                                // Container(
+                                                //   child: const Row(
+                                                //     children: <Widget>[
+                                                //       Icon(
+                                                //         Icons.star,
+                                                //         color:
+                                                //             DesignComponentAppTheme
+                                                //                 .nearlyBlue,
+                                                //         size: 20,
+                                                //       ),
+                                                //     ],
+                                                //   ),
+                                                // )
                                               ],
                                             ),
                                           ),
@@ -199,37 +199,38 @@ class CategoryView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.only(top: 24, right: 16, left: 16),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(16.0)),
-                            boxShadow: <BoxShadow>[
-                              BoxShadow(
-                                  color: DesignComponentAppTheme.grey
-                                      .withOpacity(0.2),
-                                  offset: const Offset(0.0, 0.0),
-                                  blurRadius: 6.0),
-                            ],
-                          ),
-                          child: const ClipRRect(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(16.0)),
-                            child: AspectRatio(
-                              aspectRatio: 1.28,
-                              child: Icon(
-                                Icons.play_circle_outline,
-                                color: DesignComponentAppTheme.nearlyBlue,
-                                size: 50,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Container(
+                    //   child: Padding(
+                    //     padding:
+                    //         const EdgeInsets.only(top: 24, right: 16, left: 16),
+                    //     child: Container(
+                    //       decoration: BoxDecoration(
+                    //         borderRadius:
+                    //             const BorderRadius.all(Radius.circular(16.0)),
+                    //         boxShadow: <BoxShadow>[
+                    //           BoxShadow(
+                    //               color: DesignComponentAppTheme.grey
+                    //                   .withOpacity(0.1),
+                    //               offset: const Offset(0.0, 0.0),
+                    //               blurRadius: 6.0),
+                    //         ],
+                    //       ),
+                    //       child: const ClipRRect(
+                    //         borderRadius:
+                    //             BorderRadius.all(Radius.circular(16.0)),
+                    //         child: AspectRatio(
+                    //           aspectRatio: 1.28,
+                    //           child: Icon(
+                    //             Icons.play_circle_outline,
+                    //             color: DesignComponentAppTheme.nearlyBlue,
+                    //             size: 50,
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                 
                   ],
                 ),
               ),
