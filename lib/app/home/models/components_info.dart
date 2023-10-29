@@ -47,7 +47,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
   Widget build(BuildContext context) {
     final double tempHeight = MediaQuery.of(context).size.height -
         (MediaQuery.of(context).size.width / 1.2) +
-        24.0;
+        4.0;
     return Container(
       color: DesignComponentAppTheme.nearlyWhite,
       child: Scaffold(
@@ -101,7 +101,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                             padding:
                                 EdgeInsets.only(top: 32.0, left: 18, right: 16),
                             child: Text(
-                              'Web Design\nComponent',
+                              'Web Design Component',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
@@ -111,38 +111,7 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 16, right: 16, bottom: 8, top: 16),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Container(
-                                  child: const Row(
-                                    children: <Widget>[
-                                      Text(
-                                        '4.3',
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.w200,
-                                          fontSize: 22,
-                                          letterSpacing: 0.27,
-                                          color: DesignComponentAppTheme.grey,
-                                        ),
-                                      ),
-                                      Icon(
-                                        Icons.star,
-                                        color:
-                                            DesignComponentAppTheme.nearlyBlue,
-                                        size: 24,
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
+                         
                           AnimatedOpacity(
                             duration: const Duration(milliseconds: 500),
                             opacity: opacity1,
@@ -180,10 +149,10 @@ class _ComponentInfoScreenState extends State<ComponentInfoScreen>
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.0)),
                   elevation: 10.0,
-                  child: Container(
+                  child: const SizedBox(
                     width: 60,
                     height: 60,
-                    child: const Center(
+                    child: Center(
                       child: Icon(
                         Icons.favorite,
                         color: DesignComponentAppTheme.nearlyWhite,

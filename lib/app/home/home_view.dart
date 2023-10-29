@@ -49,14 +49,14 @@ class _DesignComponentHomeScreenState extends State<DesignComponentHomeScreen> {
   }
 
   Widget getPopularComponentUI() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0, left: 18, right: 16),
+    return const Padding(
+      padding: EdgeInsets.only(top: 8.0, left: 18, right: 16),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Text(
-            'Popular Component',
+          Text(
+            'Components',
             textAlign: TextAlign.left,
             style: TextStyle(
               fontWeight: FontWeight.w600,
@@ -66,26 +66,16 @@ class _DesignComponentHomeScreenState extends State<DesignComponentHomeScreen> {
             ),
           ),
           Flexible(
-            child: PopularComponentListView(
-              callBack: () {
-                moveTo();
-              },
-            ),
+            child: PopularComponentListView(),
           )
         ],
       ),
     );
   }
 //navigation to the components info
-  void moveTo() {
-    Navigator.push<dynamic>(
-      context,
-      MaterialPageRoute<dynamic>(
-        builder: (BuildContext context) => ComponentInfoScreen(),
-      ),
-    );
+  
   }
  
-}
+
 
 

@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_components/app/home/home_view.dart';
 import 'package:flutter_components/app_theme.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter_components/components/cards/main_list.dart';
+import 'package:flutter_components/components/lists/main_list.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +35,14 @@ class MyApp extends StatelessWidget {
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
       ),
-      home: DesignComponentHomeScreen(),
+      initialRoute: '/',
+      routes: {
+      '/': (context) => DesignComponentHomeScreen(),
+      '/listScreen': (context) => const ListScreen(),
+      '/lardScreen': (context) => const CardScreen(),
+      // Define routes for other card types here
+    },
+      // DesignComponentHomeScreen(),
     );
   }
 }

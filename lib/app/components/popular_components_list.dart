@@ -4,9 +4,10 @@ import 'package:flutter_components/app/home/models/design_components.dart';
 import 'package:flutter_components/main.dart';
 
 class PopularComponentListView extends StatefulWidget {
-  const PopularComponentListView({Key? key, this.callBack}) : super(key: key);
+  const PopularComponentListView({super.key});
 
-  final Function()? callBack;
+
+  
   @override
   _PopularComponentListViewState createState() =>
       _PopularComponentListViewState();
@@ -15,8 +16,10 @@ class PopularComponentListView extends StatefulWidget {
 class _PopularComponentListViewState extends State<PopularComponentListView>
     with TickerProviderStateMixin {
   AnimationController? animationController;
+  
+   
   @override
-  void initState() {
+  void initState() { 
     animationController = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
     super.initState();
@@ -50,6 +53,7 @@ class _PopularComponentListViewState extends State<PopularComponentListView>
               children: List<Widget>.generate(
                 Category.popularComponentList.length,
                 (int index) {
+                
                   final int count = Category.popularComponentList.length;
                   final Animation<double> animation =
                       Tween<double>(begin: 0.0, end: 1.0).animate(
@@ -60,11 +64,21 @@ class _PopularComponentListViewState extends State<PopularComponentListView>
                     ),
                   );
                   animationController?.forward();
+
+                  
                   return CategoryView(
-                    callback: widget.callBack,
+                    callback: (){
+                      if (index == 0) {
+                           Navigator.pushNamed(context, '/listScreens');
+                            } else if(index ==1) {
+                           Navigator.pushNamed(context, '/lardScreen');
+                          }
+
+    },
                     category: Category.popularComponentList[index],
                     animation: animation,
                     animationController: animationController,
+  
                   );
                 },
               ),
@@ -124,15 +138,15 @@ class CategoryView extends StatelessWidget {
                                 children: <Widget>[
                                   Expanded(
                                     child: Container(
-                                      child: const Column(
+                                      child:  Column(
                                         children: <Widget>[
                                           Padding(
-                                            padding: EdgeInsets.only(
+                                            padding: const EdgeInsets.only(
                                                 top: 16, left: 16, right: 16),
                                             child: Text(
-                                              'title',
+                                              category!.title,
                                               textAlign: TextAlign.left,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 20,
                                                 letterSpacing: 0.27,
@@ -142,8 +156,8 @@ class CategoryView extends StatelessWidget {
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.only(
-                                                top: 8,
+                                            padding: const EdgeInsets.only(
+                                                top: 28,
                                                 left: 16,
                                                 right: 16,
                                                 bottom: 8),
@@ -155,9 +169,9 @@ class CategoryView extends StatelessWidget {
                                                   CrossAxisAlignment.center,
                                               children: <Widget>[
                                                 Text(
-                                                  'Components 5',
+                                                  category!.lessonCount.toString(),
                                                   textAlign: TextAlign.left,
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                     fontWeight: FontWeight.w200,
                                                     fontSize: 18,
                                                     letterSpacing: 0.27,
@@ -166,6 +180,8 @@ class CategoryView extends StatelessWidget {
                                                             .grey,
                                                   ),
                                                 ),
+                                                Icon(category!.icon,color: 
+                                                            DesignComponentAppTheme.nearlyBlue)
                                                 // Container(
                                                 //   child: const Row(
                                                 //     children: <Widget>[
@@ -242,16 +258,24 @@ class CategoryView extends StatelessWidget {
   }
 }
 
+enum CategoryType {
+  lists ,
+  buttons,
+  cards
+}
+
 class Category {
   Category({
     this.title = '',
     this.icon,
     this.lessonCount = 0,
     this.rating = 0.0,
+    this.categoryType
   });
 
-  String title;
+   String title;
   int lessonCount;
+ CategoryType? categoryType;
 
   double rating;
   IconData? icon;
@@ -259,54 +283,62 @@ class Category {
   static List<Category> categoryList = <Category>[
     Category(
       icon: Icons.list,
-      title: 'User interface Design',
+      title: 'LISTS',
       lessonCount: 24,
       rating: 4.3,
+      categoryType: CategoryType.lists
     ),
     Category(
       icon: Icons.smart_button,
       title: 'User interface Design',
       lessonCount: 22,
       rating: 4.6,
+      categoryType: CategoryType.buttons
     ),
     Category(
       icon: Icons.input,
       title: 'User interface Design',
       lessonCount: 24,
       rating: 4.3,
+      categoryType: CategoryType.cards
     ),
     Category(
       icon: Icons.navigation,
       title: 'User interface Design',
       lessonCount: 22,
       rating: 4.6,
+      categoryType: CategoryType.lists
     ),
   ];
 
   static List<Category> popularComponentList = <Category>[
     Category(
-      icon: Icons.navigation,
-      title: 'App Design Component',
+      icon: Icons.list,
+      title: 'lists',
       lessonCount: 12,
       rating: 4.8,
+      categoryType: CategoryType.lists
     ),
     Category(
-      icon: Icons.input,
-      title: 'Web Design Component',
+      icon: Icons.radio_button_checked,
+      title: 'buttons',
       lessonCount: 28,
       rating: 4.9,
+      categoryType: CategoryType.buttons
     ),
     Category(
-      icon: Icons.dashboard_customize,
-      title: 'App Design Component',
+      icon: Icons.grid_4x4,
+      title: 'Grid view',
       lessonCount: 12,
       rating: 4.8,
+      categoryType: CategoryType.cards
     ),
     Category(
-      icon: Icons.data_array,
-      title: 'Web Design Component',
+      icon: Icons.card_membership,
+      title: 'cards',
       lessonCount: 28,
       rating: 4.9,
+      categoryType: CategoryType.lists
     ),
   ];
 }
