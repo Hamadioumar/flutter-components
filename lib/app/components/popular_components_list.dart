@@ -69,7 +69,7 @@ class _PopularComponentListViewState extends State<PopularComponentListView>
                   return CategoryView(
                     callback: (){
                       if (index == 0) {
-                           Navigator.pushNamed(context, '/listScreens');
+                           Navigator.pushNamed(context, '/listScreen');
                             } else if(index ==1) {
                            Navigator.pushNamed(context, '/lardScreen');
                           }

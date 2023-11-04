@@ -5,6 +5,8 @@ class CardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return SafeArea(child: Container(
+      child: const Text("I'm a card"),
+    ));
   }
 }
